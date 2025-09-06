@@ -356,11 +356,11 @@ const toggle = document.getElementById("toggleBtn");
 const hiddenText = document.getElementById("toggleText");
 toggle.addEventListener("click", () => {
 	hiddenText.style.display = (hiddenText.style.display === "block" ? "none" : "block");
+	window.scrollBy(0, -1);
     window.scrollTo({
       top: document.body.scrollHeight,
       behavior: "smooth"
     })
-	window.scrollBy(0, -1);
 });
 	</script>
 </body></html>
