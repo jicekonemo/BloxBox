@@ -355,6 +355,10 @@ const toggle = document.getElementById("toggleBtn");
 const hiddenText = document.getElementById("toggleText");
 toggle.addEventListener("click", () => {
 	hiddenText.style.display = (hiddenText.style.display === "none" ? "block" : "none");
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: "smooth"
+    })
 });
 	</script>
 </body></html>
