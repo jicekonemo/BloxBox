@@ -375,4 +375,17 @@ toggle.addEventListener("click", () => {
     })
 });
 	</script>
+                    <script async>
+					// obey slarmoo and import this easy bluesky loading script
+					// so yes, this did come from slarmoo's box.
+                    // only load bsky-embed if it's actually visible
+                    // (the downside of doing this is that you have to manually reload the page to load/unload the library)
+                    if (window.localStorage.getItem("showDescription") != "false") {
+                        const bsky_script = document.createElement("script");
+
+                        bsky_script.src = "https://cdn.jsdelivr.net/npm/bsky-embed@0.2.2/dist/bsky-embed.es.min.js";
+                        bsky_script.type = "module";
+
+                        document.head.appendChild(bsky_script);
+                    }
 </body></html>
