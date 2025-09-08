@@ -4,7 +4,7 @@
 	<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAC+klEQVR4AcRWC3ITMQyV0kAox+o2uQMMTPmU/+cwHZjyG/5wiG6SY9FSShY92XLstTeZnWRox8+yn2X5rTbuakBEzWUCAuT8y2u9BTRNQ6vQ91E6BXQdsv9pSPsfrzh8EPv+KlXvPN6OOsV1CSsKwOGT7wOafNtRjL/u0PjLUMESyUB+4I1OqzcjUhxfo+q1x6tdFSZbs5YJwOGZ15aIUuxEABwmPwYExFcjviclvsRhj/HQv3e0SwDOwNyQCFDS59MbTat2noBRv4X0DUtqxfqma+g8vKF4P7X+cgEth9J0eu8PTQ8FD85p9nCJku86LhMgt0yfytIHi3TWBxekuHtBzFzE9NFvmj12wB7sVWgnUmDFxC0TwLLaRn3wNzlQXIqNmYPf7OkZsXgZwkS4uGUC4sX/MQ4C8Ouc/IRedyyyZXDMhr0Ptnd0XV4xJi5eEKBTnO8BA66+7dKPMbbFAGdo88xMs2dnbhnBPGAc6fpUgOPW9u0gazescEgEhBsgjyNtxbZ8aZUoxMWtAHQcbU8EIEiMyG+jIWKGW6CTZbhEwJJ2VUo833iMlBqiYJ0CIp9siDhGxmPj+thUANLj4Y1+jnFFEdQ4s8bBAjGPPZV8jsEn6YeTkq4LApiZTm6g2pH0y2NJw29G4Vz79yFGGBDNX/4i5qWKIKB/+O3syARAWxuoiJBSQ9fRtg5bSUUUxyGbtDZnAmw9ypq8E6Lx56ECNSEOKKGSmrA6HhGQvTsLaAd42ynArxeNFqXtglQK06LzGjIX4FPljWZOO094Q4ydg0Zt4HBYPCmN4RMBYcKUWW7CzQWdCBphDZpOP/FGKe2EkGZDfV02wb9dw/zFKQHMUCXBfUsEgGNOHcBtC8x57EwADmNmqm8tqJZPsUIqovqOlGQChDDYq7E57OyJlGSAVERz+Rwrnp8SM1YRPUVRAFyYWTcxp7aWmrCWohSY3pfC9PCcplKYKqQmZE79md0cMUvoFFByBsfsAjKXLXz6oLeAPsHhuw7/AAAA//9rNa66AAAABklEQVQDAN1JjTC142rPAAAAAElFTkSuQmCC">
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>BloxBox ${x.version}</title>
+	<title>BloxBox 0.1.1</title>
 	<meta name="mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
@@ -326,14 +326,14 @@ let input = document.getElementById("song-name");
 input.value = songName;
 input.oninput = () => {
   songName = input.value || "Untitled";
-  document.title = `${songName} - BloxBox ${x.version}`;
+  document.title = `${songName} - BloxBox 0.1.1`;
   newUrl = buildNewUrl(songName);
   console.log("songName:", songName);
   console.log("newUrl:", newUrl);
 /*  history.replaceState(null, "", newUrl);  */
 /* That code above ^^ completely obliterates BloxBox's ablity to decode a URL, so, as of now, you can't save the name of a song. */
 };
-document.title = `${songName} - BloxBox ${x.version}`;
+document.title = `${songName} - BloxBox 0.1.1`;
 
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|android|ipad|playbook|silk/i.test(navigator.userAgent) ) {
 	document.getElementById("introduction").innerHTML = "BloxBox is an online tool for sketching and sharing instrumental music. Make sure that your volume is turned up, then press the play button!";
