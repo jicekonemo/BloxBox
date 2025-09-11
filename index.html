@@ -382,5 +382,8 @@ toggle.addEventListener("click", () => {
       behavior: "smooth"
     })
 });
+document.getElementById("hotdog").addEventListener("click", function() {
+	document.getElementById("hotdog").style.width=Math.floor(Math.random() * (75 - 25 + 1)) + 25 + "%";
+});
 	</script>
 </body></html>
