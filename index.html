@@ -200,7 +200,8 @@
 						BloxBox automatically plays the notes out loud for you. Try it!
 					</p>
 					<img id="hotdog" src="https://raw.githubusercontent.com/jicekonemo/BloxBox/refs/heads/main/hotdog.png">
-					<br><p id="hotdogtxt">Click the hotdog above  ^^^</p><br><br>
+					<h4 id="hotdogpoints">Hotdog Points: 0</h4>
+					<br><br><p id="hotdogtxt">Click the hotdog above  ^^^</p><br><br>
 					<p>
 						Notes go into patterns, and you can edit one pattern at a time.
 						Those numbered boxes at the bottom of the editor are the different patterns you can edit.
@@ -390,7 +391,11 @@ toggle.addEventListener("click", () => {
       behavior: "smooth"
     })
 });
+let hotdogpts = 0;
+let htdgptsHeader = document.getElementById("hotdogpoints");
 document.getElementById("hotdog").addEventListener("click", function() {
+	hotdogpts++;
+	htdgptsHeader.textContent = "Hotdog points: " + hotdogpts;
 	document.getElementById("hotdog").style.width=Math.floor(Math.random() * (75 - 25 + 1)) + 25 + "%";
 	document.getElementById("hotdog").style.height=Math.floor(Math.random() * (350 - 50 + 1)) + 50 + "px";
 });
