@@ -1,4 +1,4 @@
-BloxBox 0.1.1<br><br><br>
+BloxBox 0.1.2<br><br><br>
 BloxBox is an experimental modification of BeepBox 4.2. BeepBox was created by John Nevsky.<br><br>
 BloxBox is not meant to replace any other mods of BeepBox, but rather to experiment with coding and editing stuff.<br><br>
 BloxBox was initially created by downloading the BeepBox Offline HTML file, and then raw editing it. *NOTE: not recommended. It's really cramped and just weird to sift through. (Espeially since all of the main code for BeepBox is formatted into just 3 lines...)<br><br><br>
