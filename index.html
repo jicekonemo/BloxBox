@@ -1193,7 +1193,7 @@ var beepbox=function(t){"use strict";
         hzOffset: 0,
         amplitudeSign: 1
     }, {
-        name: "Very High",
+        name: "sharp bass overlay",
         mult: 1000000000000000000000000000000,
         hzOffset: 0,
         amplitudeSign: 1
@@ -1672,6 +1672,31 @@ var beepbox=function(t){"use strict";
                 fadeInSeconds: 0,
                 fadeOutTicks: -1,
                 chord: "arpeggio",
+                wave: "triangle",
+                unison: "none",
+                envelopes: []
+            }
+        }, {
+            name: "bass triangle wave",
+            midiProgram: 71,
+            settings: {
+                type: "chip",
+                eqFilter: [{
+					type: "low-pass",
+					cutoffHz: 16000,
+					linearGain: 0.0884;
+				}, {
+					type: "peak",
+					cutoffHz: 105.11,
+					linearGain: 2;
+				}, {
+					type: "peak",
+					cutoffHz: 2378.41,
+					linearGain: 0.3536;
+				}],
+                effects: [],
+                fadeInSeconds: 0,
+                fadeOutTicks: 12,
                 wave: "triangle",
                 unison: "none",
                 envelopes: []
