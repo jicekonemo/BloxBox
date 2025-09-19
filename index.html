@@ -17075,7 +17075,7 @@ var beepbox=function(t){"use strict";
                 const i = xn({
                     style: "width: 100%; height: 60px; border: none; display: block;"
                 });
-                i.src = "player.html/#song=" + window.localStorage.getItem(un(t.versions[0]));
+                i.src = "player.html#song=" + window.localStorage.getItem(un(t.versions[0]));
                 const s = bn({
                     style: "margin: 4px 0;"
                 }, bn({
@@ -18326,10 +18326,10 @@ var beepbox=function(t){"use strict";
                         window.open("https://tinyurl.com/api-create.php?url=" + encodeURIComponent(new URL("#" + this.j.song.toBase64String(), location.href).href));
                         break;
                     case "viewPlayer":
-                        location.href = "player.html/#song=" + this.j.song.toBase64String();
+                        location.href = "player.html#song=" + this.j.song.toBase64String();
                         break;
                     case "copyEmbed":
-                        this.ll(`<iframe width="384" height="60" style="border: none;" src="${new URL("player.html/#song="+this.j.song.toBase64String(),location.href).href}"></iframe>`);
+                        this.ll(`<iframe width="384" height="60" style="border: none;" src="${new URL("player.html#song="+this.j.song.toBase64String(),location.href).href}"></iframe>`);
                         break;
                     case "songRecovery":
                         this.Yr("songRecovery")
