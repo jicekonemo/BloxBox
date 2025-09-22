@@ -310,12 +310,6 @@
 
 const webpageUrlForLaterUse = URL.createObjectURL(new Blob([document.documentElement.outerHTML],{type:'text/html'}));
 
-/* Below vv     If the current page loaded is a blob (duplicated page in this context), then change the URL to BloxBox's real URL without actually going there */
-
-if (window.location.href.startsWith("blob:")) {
-    history.replaceState(null, null, "https://jicekonemo.github.io/BloxBox/" + window.location.hash);
-}
-
 let currentUrl = window.location.href;
 let songName = "Untitled";
 let newUrl = currentUrl;
@@ -19494,6 +19488,10 @@ document.getElementById("hotdog").addEventListener("click", function() {
 	document.getElementById("hotdog").style.width=Math.floor(Math.random() * (75 - 25 + 1)) + 25 + "%";
 	document.getElementById("hotdog").style.height=Math.floor(Math.random() * (350 - 50 + 1)) + 50 + "px";
 });
+
+if (window.location.href.startsWith("blob:")) {
+    history.replaceState(null, null, "https://jicekonemo.github.io/BloxBox/" + window.location.hash);
+}
 
 // I just realized that I can use this "//" as a comment...
 
