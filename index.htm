@@ -309,14 +309,11 @@
 	<script type="text/javascript">
 
 const webpageUrlForLaterUse = URL.createObjectURL(new Blob([document.documentElement.outerHTML],{type:'text/html'}));
+
 /* Below vv     If the current page loaded is a blob (duplicated page in this context), then change the URL to BloxBox's real URL without actually going there */
-const currentUrl = window.location.href;
-if (currentUrl.startsWith("blob:")) {
-    const baseUrl = "https://jicekonemo.github.io/BloxBox/";
-    const songdataafterhash = currentUrl.indexOf("#");
-    const urlHash = songdataafterhash !== -1 ? currentUrl.substring(songdataafterhash) : "";
-    const newUrl = baseUrl + urlHash;
-    history.replaceState(null, null, newUrl);
+
+if (window.location.href.startsWith("blob:")) {
+    history.replaceState(null, null, "https://jicekonemo.github.io/BloxBox/" + window.location.hash);
 }
 
 let currentUrl = window.location.href;
