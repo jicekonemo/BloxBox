@@ -17085,7 +17085,7 @@ var beepbox=function(t){"use strict";
                 }, e), i);
                 this.rr.appendChild(s), e.addEventListener("change", (() => {
                     const s = t.versions[e.selectedIndex];
-                    i.contentWindow.location.replace("player/#song=" + window.localStorage.getItem(un(s))), i.contentWindow.dispatchEvent(new Event("hashchange"))
+                    i.contentWindow.location.replace("player#song=" + window.localStorage.getItem(un(s))), i.contentWindow.dispatchEvent(new Event("hashchange"))
                 }))
             }
         }
@@ -18320,11 +18320,11 @@ var beepbox=function(t){"use strict";
                     case "duplicatePage":
                         window.open(webpageUrlForLaterUse, '_blank');
                     case "copyUrl":
-                        this.ll(new URL("#" + this.j.song.toBase64String(), location.href).href);
+                        this.ll(new URL("#" + this.j.song.toBase64String(), location.href).href.startsWith("blob:") ? "https://jicekonemo.github.io/BloxBox/" + new URL("#" + this.j.song.toBase64String(), location.href).href.substring(new URL("#" + this.j.song.toBase64String(), location.href).href.indexOf("#")) : new URL("#" + this.j.song.toBase64String(), location.href).href));
                         break;
                     case "shareUrl":
                         navigator.share({
-                            url: new URL("#" + this.j.song.toBase64String(), location.href).href
+                            url: new URL("#" + this.j.song.toBase64String(), location.href).href.startsWith("blob:") ? "https://jicekonemo.github.io/BloxBox/" + new URL("#" + this.j.song.toBase64String(), location.href).href.substring(new URL("#" + this.j.song.toBase64String(), location.href).href.indexOf("#")) : new URL("#" + this.j.song.toBase64String(), location.href).href));
                         });
                         break;
                     case "shortenUrl":
