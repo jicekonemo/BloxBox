@@ -18328,7 +18328,7 @@ var beepbox=function(t){"use strict";
                         });
                         break;
                     case "shortenUrl":
-                        window.open("https://tinyurl.com/api-create.php?url=" + encodeURIComponent(new URL("#" + this.j.song.toBase64String(), location.href).href));
+                        window.open("https://tinyurl.com/api-create.php?url=" + encodeURIComponent(new URL("#" + this.j.song.toBase64String(), location.href).href.startsWith("blob:") ? "https://jicekonemo.github.io/BloxBox/" + new URL("#" + this.j.song.toBase64String(), location.href).href.substring(new URL("#" + this.j.song.toBase64String(), location.href).href.indexOf("#")) : new URL("#" + this.j.song.toBase64String(), location.href).href)); /* Oh my god do not ever try this it is terrible */
                         break;
                     case "viewPlayer":
                         location.href = "player.html#song=" + this.j.song.toBase64String();
@@ -19487,13 +19487,12 @@ document.getElementById("hotdog").addEventListener("click", function() {
 	document.getElementById("hotdog").style.width=Math.floor(Math.random() * (75 - 25 + 1)) + 25 + "%";
 	document.getElementById("hotdog").style.height=Math.floor(Math.random() * (350 - 50 + 1)) + 50 + "px";
 });
-if (window.location.href.startsWith("blob:")) {
-    history.replaceState(null, null, "https://jicekonemo.github.io/BloxBox/" + window.location.hash);
-}
 
 // I just realized that I can use this "//" as a comment...
 
 // since "/* */" is used for multi-lined comments...
+
+/* Y'know what, I don't really care */
 
 	</script>
 </body></html>
