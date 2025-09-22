@@ -18320,7 +18320,7 @@ var beepbox=function(t){"use strict";
                     case "duplicatePage":
                         window.open(webpageUrlForLaterUse, '_blank');
                     case "copyUrl":
-                        this.ll(new URL("#" + this.j.song.toBase64String(), location.href).href.startsWith("blob:") ? "https://jicekonemo.github.io/BloxBox/" + new URL("#" + this.j.song.toBase64String(), location.href).href.substring(new URL("#" + this.j.song.toBase64String(), location.href).href.indexOf("#")) : new URL("#" + this.j.song.toBase64String(), location.href).href)));
+                        this.ll(new URL("#" + this.j.song.toBase64String(), location.href).href.startsWith("blob:") ? "https://jicekonemo.github.io/BloxBox/" + new URL("#" + this.j.song.toBase64String(), location.href).href.substring(new URL("#" + this.j.song.toBase64String(), location.href).href.indexOf("#")) : new URL("#" + this.j.song.toBase64String(), location.href).href;
                         break;
                     case "shareUrl":
                         navigator.share({
