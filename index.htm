@@ -18324,7 +18324,7 @@ var beepbox=function(t){"use strict";
                         break;
                     case "shareUrl":
                         navigator.share({
-                            url: new URL("#" + this.j.song.toBase64String(), location.href).href.startsWith("blob:") ? "https://jicekonemo.github.io/BloxBox/" + new URL("#" + this.j.song.toBase64String(), location.href).href.substring(new URL("#" + this.j.song.toBase64String(), location.href).href.indexOf("#")) : new URL("#" + this.j.song.toBase64String(), location.href).href));
+                            url: new URL("#" + this.j.song.toBase64String(), location.href).href.startsWith("blob:") ? "https://jicekonemo.github.io/BloxBox/" + new URL("#" + this.j.song.toBase64String(), location.href).href.substring(new URL("#" + this.j.song.toBase64String(), location.href).href.indexOf("#")) : new URL("#" + this.j.song.toBase64String(), location.href).href;
                         });
                         break;
                     case "shortenUrl":
