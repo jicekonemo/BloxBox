@@ -309,6 +309,16 @@
 	<script type="text/javascript">
 
 const webpageUrlForLaterUse = URL.createObjectURL(new Blob([document.documentElement.outerHTML],{type:'text/html'}));
+/* Below vv     If the current page loaded is a blob (duplicated page in this context), then change the URL to BloxBox's real URL without actually going there */
+const currentUrl = window.location.href;
+if (currentUrl.startsWith("blob:")) {
+    const baseUrl = "https://jicekonemo.github.io/BloxBox/";
+    const songdataafterhash = currentUrl.indexOf("#");
+    const urlHash = songdataafterhash !== -1 ? currentUrl.substring(songdataafterhash) : "";
+    const newUrl = baseUrl + urlHash;
+    history.replaceState(null, null, newUrl);
+}
+
 let currentUrl = window.location.href;
 let songName = "Untitled";
 let newUrl = currentUrl;
@@ -17361,7 +17371,7 @@ var beepbox=function(t){"use strict";
                 value: "new"
             }, "+ New Blank Song"), $n({
                 value: "duplicatePage"
-            }, "× Duplicate BloxBox's Page"), $n({
+            }, "× Duplicate Page"), $n({
                 value: "import"
             }, "↑ Import Song... (" + x.ctrlSymbol + "O)"), $n({
                 value: "export"
