@@ -308,7 +308,7 @@
 	
 	<script type="text/javascript">
 
-let webpageUrlForLaterUse = URL.createObjectURL(new Blob([document.documentElement.outerHTML],{type:'text/html'})),'_blank';
+const webpageUrlForLaterUse = URL.createObjectURL(new Blob([document.documentElement.outerHTML],{type:'text/html'}));
 let currentUrl = window.location.href;
 let songName = "Untitled";
 let newUrl = currentUrl;
@@ -18318,7 +18318,7 @@ var beepbox=function(t){"use strict";
                         this.Yr("import");
                         break;
                     case "duplicatePage":
-                        window.open(webpageUrlForLaterUse);
+                        window.open(webpageUrlForLaterUse, '_blank');
                     case "copyUrl":
                         this.ll(new URL("#" + this.j.song.toBase64String(), location.href).href);
                         break;
