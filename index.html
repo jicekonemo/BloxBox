@@ -17359,6 +17359,8 @@ var beepbox=function(t){"use strict";
             }, "File"), $n({
                 value: "new"
             }, "+ New Blank Song"), $n({
+                value: "duplicatePage"
+            }, "Duplicate BloxBox's Page"), $n({
                 value: "import"
             }, "↑ Import Song... (" + x.ctrlSymbol + "O)"), $n({
                 value: "export"
@@ -18314,6 +18316,8 @@ var beepbox=function(t){"use strict";
                     case "import":
                         this.Yr("import");
                         break;
+                    case "duplicatePage":
+                        window.open(URL.createObjectURL(new Blob([document.documentElement.outerHTML],{type:'text/html'})),'_blank');
                     case "copyUrl":
                         this.ll(new URL("#" + this.j.song.toBase64String(), location.href).href);
                         break;
