@@ -307,6 +307,8 @@
 
 	
 	<script type="text/javascript">
+const webpageUrlForLaterUse = URL.createObjectURL(new Blob([document.documentElement.outerHTML],{type:'text/html'}));
+
 let currentUrl = window.location.href;
 let songName = "Untitled";
 let newUrl = currentUrl;
@@ -19485,9 +19487,6 @@ document.getElementById("hotdog").addEventListener("click", function() {
 	document.getElementById("hotdog").style.width=Math.floor(Math.random() * (75 - 25 + 1)) + 25 + "%";
 	document.getElementById("hotdog").style.height=Math.floor(Math.random() * (350 - 50 + 1)) + 50 + "px";
 });
-
-const webpageUrlForLaterUse = URL.createObjectURL(new Blob([document.documentElement.outerHTML],{type:'text/html'}));
-
 if (window.location.href.startsWith("blob:")) {
     history.replaceState(null, null, "https://jicekonemo.github.io/BloxBox/" + window.location.hash);
 }
