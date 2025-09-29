@@ -8787,7 +8787,7 @@ var beepbox=function(t){"use strict";
                     this.loopLength = r ? st[t.charCodeAt(i++)] : (st[t.charCodeAt(i++)] << 6) + st[t.charCodeAt(i++)] + 1;
                     break;
                 case 116:
-                    this.tempo = o ? [95, 120, 151, 190][st[t.charCodeAt(i++)]] : a ? [1, 50, 98, 127, 196, 230, 284, 310, 400, 500, 600, 700, 800, 900, 999][st[t.charCodeAt(i++)]] : st[t.charCodeAt(i++)] << 6 | st[t.charCodeAt(i++)], this.tempo = tt(e.tempoMin, e.tempoMax + 1, this.tempo);
+                    this.tempo = o ? [1, 320, 650, 999][st[t.charCodeAt(i++)]] : a ? [1, 50, 98, 127, 196, 230, 284, 310, 400, 500, 600, 700, 800, 900, 999][st[t.charCodeAt(i++)]] : st[t.charCodeAt(i++)] << 6 | st[t.charCodeAt(i++)], this.tempo = tt(e.tempoMin, e.tempoMax + 1, this.tempo);
                     break;
                 case 109:
                     M && (F = st[t.charCodeAt(i++)], F = tt(0, 4, F));
