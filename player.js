@@ -4898,7 +4898,7 @@ function Bt() {
                 i=e.substring(s+1);
 
                 switch(t) {
-                    case"song": at.setSong(i), at.snapToStart(), ct.setAttribute("href", "../#" +i);
+                    case"song": at.setSong(i), at.snapToStart(), ct.setAttribute("href", "index.htm#" +i);
                     break;
                     case"loop": at.loopRepeatCount="1" !=i?0:-1, $t()
                 }
@@ -4906,7 +4906,7 @@ function Bt() {
 
             else at.setSong(t),
             at.snapToStart(),
-            ct.setAttribute("href", "../#" +t)
+            ct.setAttribute("href", "index.htm#" +t)
         }
 
         Lt()
