@@ -1848,6 +1848,19 @@ var beepbox=function(t){"use strict";
                 wave: "retro"
             }
         }, {
+            name: "deep hit",
+            midiProgram: 116,
+            isNoise: !0,
+            settings: {
+                type: "noise",
+                transition: "hard",
+                effects: ["reverb"],
+				reverb: 67,
+                filterCutoffHz: 4e3,
+                filterResonance: 0,
+                filterEnvelope: "steady",
+                wave: "hollow"
+        }, {
             name: "chip guitar",
             midiProgram: 27,
             settings: {
@@ -2118,6 +2131,38 @@ var beepbox=function(t){"use strict";
                 unison: "piano",
                 stringSustain: 86,
                 envelopes: []
+            }
+        }, {
+            name: "cutoff bright piano",
+            midiProgram: 1,
+            generalMidi: !0,
+            settings: {
+                type: "Picked String",
+                eqFilter: [{
+                    type: "low-pass",
+                    cutoffHz: 1681.79,
+                    linearGain: .7071
+                }, {
+                    type: "high-pass",
+                    cutoffHz: 148.65,
+                    linearGain: .5
+                }, {
+                    type: "peak",
+                    cutoffHz: 3363.59,
+                    linearGain: 1.4142
+                }],
+                effects: "",
+                transition: "normal",
+                fadeInSeconds: 0,
+                fadeOutTicks: 0,
+                chord: "simultaneous",
+                harmonics: [100, 100, 86, 86, 71, 71, 0, 71, 71, 71, 71, 71, 71, 14, 57, 57, 57, 57, 57, 57, 29, 57, 57, 57, 57, 57, 57, 57],
+                unison: "piano",
+                stringSustain: 64,
+                envelopes: [{
+                    target: "noteFilterAllFreqs",
+                    envelope: "twang 3"
+                }]
             }
         }, {
             name: "electric grand",
