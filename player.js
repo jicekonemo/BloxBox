@@ -241,8 +241,8 @@ e.blackKeyNameParents=[-1,
 -1,
 1,
 -1],
-e.tempoMin=30,
-e.tempoMax=300,
+e.tempoMin=1,
+e.tempoMax=999,
 e.reverbRange=4,
 e.beatsPerBarMin=3,
 e.beatsPerBarMax=16,
@@ -321,6 +321,38 @@ name:"double pulse", volume:.4, samples:s([1, 1, 1, 1, 1, -1, -1, -1, 1, 1, 1, 1
 
 , {
 name:"spiky", volume:.4, samples:s([1, -1, 1, -1, 1, 0])
+}
+
+, {
+name:"pseudo-sine", volume:.3, samples:s([1, 0.7, 0.3, -0.5, -1, -0.4])
+}
+
+, {
+name:"double square", volume:.4, samples:s([1, 1, -1, -1, 0.5, -0.5, 0.5, -0.5])
+}
+
+, {
+name:"sudden", volume:.5, samples:s([0, 0, -1, 1, 0, 0])
+}
+
+, {
+name:"real sawtooth", volume:1, samples:s([-1, -0.9, -0.8, -0.7, -0.6, -0.5, -0.4, -0.3, -0.2, -0.1, 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1])
+}
+
+, {
+name:"real triangle", volume:1, samples:s([-1, -0.9, -0.8, -0.7, -0.6, -0.5, -0.4, -0.3, -0.2, -0.1, 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0, -0.1, -0.2, -0.3, -0.4, -0.5, -0.6, -0.7, -0.8, -0.9, -1])
+}
+
+, {
+name:"1/6 pulse", volume:.5, samples:s([1, 1, 1, 1, 1, -1])
+}
+
+, {
+name:"ModBox Squaretooth", volume:1, samples:s([0, 0.3, 1, 0.3, -0.1, -1])
+}
+
+, {
+name:"ModBox Guitar", volume:1, samples:s([-0.8, 1, 0.75, -0.8, -0.7, -1])
 }
 
 ]),
@@ -441,6 +473,14 @@ name:"bowed", spread:.02, offset:0, volume:1, sign:-1
 name:"piano", spread:.01, offset:0, volume:1, sign:.7
 }
 
+, {
+name:"expressional", spread:12, offset:0, volume:1.5, sign:1
+}
+
+, {
+name:"FART", spread:13, offset:-5, expression:1, sign:-3
+}
+
 ]),
 e.effectsNames=["none",
 "reverb",
@@ -528,11 +568,23 @@ e.operatorCarrierInterval=[0,
 .091],
 e.operatorAmplitudeMax=15,
 e.operatorFrequencies=h([ {
-        name:"1×", mult:1, hzOffset:0, amplitudeSign:1
+        name:"0.1×", mult:0.1, hzOffset:0, amplitudeSign:1
     }
 
     , {
-    name:"~1×", mult:1, hzOffset:1.5, amplitudeSign:-1
+    name:"0.25×", mult:0.25, hzOffset:0, amplitudeSign:1
+}
+
+, {
+name:"0.5×", mult:0.5, hzOffset:0, amplitudeSign:1
+}
+
+, {
+name:"1×", mult:1, hzOffset:0, amplitudeSign:1
+}
+
+, {
+name:"~1×", mult:1, hzOffset:1.5, amplitudeSign:-1
 }
 
 , {
@@ -584,7 +636,51 @@ name:"16×", mult:16, hzOffset:0, amplitudeSign:1
 }
 
 , {
+name:"18×", mult:18, hzOffset:0, amplitudeSign:1
+}
+
+, {
 name:"20×", mult:20, hzOffset:0, amplitudeSign:1
+} 
+
+, {
+name:"25×", mult:25, hzOffset:0, amplitudeSign:1
+}
+
+, {
+name:"30×", mult:30, hzOffset:0, amplitudeSign:1
+}
+
+, {
+name:"40×", mult:40, hzOffset:0, amplitudeSign:1
+}
+
+, {
+name:"50×", mult:50, hzOffset:0, amplitudeSign:1
+}
+
+, {
+name:"75×", mult:75, hzOffset:0, amplitudeSign:1
+}
+
+, {
+name:"100×", mult:100, hzOffset:0, amplitudeSign:1
+}
+
+, {
+name:"200×", mult:200, hzOffset:0, amplitudeSign:1
+}
+
+, {
+name:"500×", mult:500, hzOffset:0, amplitudeSign:1
+}
+
+, {
+name:"1000×", mult:1000, hzOffset:0, amplitudeSign:1
+}
+
+, {
+name:"sharp bass overlay", mult:1000000000000000000000000000000, hzOffset:0, amplitudeSign:1
 }
 
 ]),
@@ -1158,7 +1254,7 @@ function E(t, e) {
 }
 
 C.themes= {
-    "dark classic":"\n\t\t\t\t:root {\n\t\t\t\t\t--page-margin: black;\n\t\t\t\t\t--editor-background: black;\n\t\t\t\t\t--hover-preview: white;\n\t\t\t\t\t--playhead: white;\n\t\t\t\t\t--primary-text: white;\n\t\t\t\t\t--secondary-text: #999;\n\t\t\t\t\t--inverted-text: black;\n\t\t\t\t\t--text-selection: rgba(119,68,255,0.99);\n\t\t\t\t\t--box-selection-fill: rgba(255,255,255,0.2);\n\t\t\t\t\t--loop-accent: #74f;\n\t\t\t\t\t--link-accent: #98f;\n\t\t\t\t\t--ui-widget-background: #444;\n\t\t\t\t\t--ui-widget-focus: #777;\n\t\t\t\t\t--pitch-background: #444;\n\t\t\t\t\t--tonic: #864;\n\t\t\t\t\t--fifth-note: #468;\n\t\t\t\t\t--white-piano-key: #bbb;\n\t\t\t\t\t--black-piano-key: #444;\n\t\t\t\t\t--pitch1-secondary-channel: #0099a1;\n\t\t\t\t\t--pitch1-primary-channel:   #25f3ff;\n\t\t\t\t\t--pitch1-secondary-note:    #00bdc7;\n\t\t\t\t\t--pitch1-primary-note:      #92f9ff;\n\t\t\t\t\t--pitch2-secondary-channel: #a1a100;\n\t\t\t\t\t--pitch2-primary-channel:   #ffff25;\n\t\t\t\t\t--pitch2-secondary-note:    #c7c700;\n\t\t\t\t\t--pitch2-primary-note:      #ffff92;\n\t\t\t\t\t--pitch3-secondary-channel: #c75000;\n\t\t\t\t\t--pitch3-primary-channel:   #ff9752;\n\t\t\t\t\t--pitch3-secondary-note:    #ff771c;\n\t\t\t\t\t--pitch3-primary-note:      #ffcdab;\n\t\t\t\t\t--pitch4-secondary-channel: #00a100;\n\t\t\t\t\t--pitch4-primary-channel:   #50ff50;\n\t\t\t\t\t--pitch4-secondary-note:    #00c700;\n\t\t\t\t\t--pitch4-primary-note:      #a0ffa0;\n\t\t\t\t\t--pitch5-secondary-channel: #d020d0;\n\t\t\t\t\t--pitch5-primary-channel:   #ff90ff;\n\t\t\t\t\t--pitch5-secondary-note:    #e040e0;\n\t\t\t\t\t--pitch5-primary-note:      #ffc0ff;\n\t\t\t\t\t--pitch6-secondary-channel: #7777b0;\n\t\t\t\t\t--pitch6-primary-channel:   #a0a0ff;\n\t\t\t\t\t--pitch6-secondary-note:    #8888d0;\n\t\t\t\t\t--pitch6-primary-note:      #d0d0ff;\n\t\t\t\t\t--noise1-secondary-channel: #6f6f6f;\n\t\t\t\t\t--noise1-primary-channel:   #aaaaaa;\n\t\t\t\t\t--noise1-secondary-note:    #a7a7a7;\n\t\t\t\t\t--noise1-primary-note:      #e0e0e0;\n\t\t\t\t\t--noise2-secondary-channel: #996633;\n\t\t\t\t\t--noise2-primary-channel:   #ddaa77;\n\t\t\t\t\t--noise2-secondary-note:    #cc9966;\n\t\t\t\t\t--noise2-primary-note:      #f0d0bb;\n\t\t\t\t\t--noise3-secondary-channel: #4a6d8f;\n\t\t\t\t\t--noise3-primary-channel:   #77aadd;\n\t\t\t\t\t--noise3-secondary-note:    #6f9fcf;\n\t\t\t\t\t--noise3-primary-note:      #bbd7ff;\n\t\t\t\t}\n\t\t\t",
+    "dark classic":"\n\t\t\t\t:root {\n\t\t\t\t\t--page-margin: black;\n\t\t\t\t\t--editor-background: black;\n\t\t\t\t\t--hover-preview: white;\n\t\t\t\t\t--playhead: white;\n\t\t\t\t\t--primary-text: white;\n\t\t\t\t\t--secondary-text: #999;\n\t\t\t\t\t--inverted-text: black;\n\t\t\t\t\t--text-selection: rgba(119,68,255,0.99);\n\t\t\t\t\t--box-selection-fill: rgba(255,255,255,0.2);\n\t\t\t\t\t--loop-accent: #74f;\n\t\t\t\t\t--link-accent: #98f;\n\t\t\t\t\t--ui-widget-background: #444;\n\t\t\t\t\t--ui-widget-focus: #777;\n\t\t\t\t\t--pitch-background: #444;\n\t\t\t\t\t--tonic: #864;\n\t\t\t\t\t--fifth-note: #468;\n\t\t\t\t\t--white-piano-key: #bbb;\n\t\t\t\t\t--black-piano-key: #444;\n\t\t\t\t\t--pitch1-secondary-channel: #005599;\n\t\t\t\t\t--pitch1-primary-channel:   #00aaff;\n\t\t\t\t\t--pitch1-secondary-note:    #006699;\n\t\t\t\t\t--pitch1-primary-note:      #33bbbb;\n\t\t\t\t\t--pitch2-secondary-channel: #aaff00;\n\t\t\t\t\t--pitch2-primary-channel:   #ffff25;\n\t\t\t\t\t--pitch2-secondary-note:    #559900;\n\t\t\t\t\t--pitch2-primary-note:      #aaff00;\n\t\t\t\t\t--pitch3-secondary-channel: #997000;\n\t\t\t\t\t--pitch3-primary-channel:   #FF9600;\n\t\t\t\t\t--pitch3-secondary-note:    #997000;\n\t\t\t\t\t--pitch3-primary-note:      #FF9600;\n\t\t\t\t\t--pitch4-secondary-channel: #770000;\n\t\t\t\t\t--pitch4-primary-channel:   #ff0000;\n\t\t\t\t\t--pitch4-secondary-note:    #770000;\n\t\t\t\t\t--pitch4-primary-note:      #ff0000;\n\t\t\t\t\t--pitch5-secondary-channel: #660033;\n\t\t\t\t\t--pitch5-primary-channel:   #990055;\n\t\t\t\t\t--pitch5-secondary-note:    #550022;\n\t\t\t\t\t--pitch5-primary-note:      #990055;\n\t\t\t\t\t--pitch6-secondary-channel: #7777b0;\n\t\t\t\t\t--pitch6-primary-channel:   #a0a0ff;\n\t\t\t\t\t--pitch6-secondary-note:    #8888d0;\n\t\t\t\t\t--pitch6-primary-note:      #d0d0ff;\n\t\t\t\t\t--noise1-secondary-channel: #6f6f6f;\n\t\t\t\t\t--noise1-primary-channel:   #aaaaaa;\n\t\t\t\t\t--noise1-secondary-note:    #a7a7a7;\n\t\t\t\t\t--noise1-primary-note:      #e0e0e0;\n\t\t\t\t\t--noise2-secondary-channel: #996633;\n\t\t\t\t\t--noise2-primary-channel:   #ddaa77;\n\t\t\t\t\t--noise2-secondary-note:    #cc9966;\n\t\t\t\t\t--noise2-primary-note:      #f0d0bb;\n\t\t\t\t\t--noise3-secondary-channel: #4a6d8f;\n\t\t\t\t\t--noise3-primary-channel:   #77aadd;\n\t\t\t\t\t--noise3-secondary-note:    #6f9fcf;\n\t\t\t\t\t--noise3-primary-note:      #bbd7ff;\n\t\t\t\t}\n\t\t\t",
     "light classic":"\n\t\t\t\t:root {\n\t\t\t\t\t-webkit-text-stroke-width: 0.5px;\n\t\t\t\t\t--page-margin: #685d88;\n\t\t\t\t\t--editor-background: white;\n\t\t\t\t\t--hover-preview: black;\n\t\t\t\t\t--playhead: rgba(0,0,0,0.5);\n\t\t\t\t\t--primary-text: black;\n\t\t\t\t\t--secondary-text: #777;\n\t\t\t\t\t--inverted-text: white;\n\t\t\t\t\t--text-selection: rgba(200,170,255,0.99);\n\t\t\t\t\t--box-selection-fill: rgba(0,0,0,0.1);\n\t\t\t\t\t--loop-accent: #98f;\n\t\t\t\t\t--link-accent: #74f;\n\t\t\t\t\t--ui-widget-background: #ececec;\n\t\t\t\t\t--ui-widget-focus: #eee;\n\t\t\t\t\t--pitch-background: #ececec;\n\t\t\t\t\t--tonic: #f0d6b6;\n\t\t\t\t\t--fifth-note: #bbddf0;\n\t\t\t\t\t--white-piano-key: #eee;\n\t\t\t\t\t--black-piano-key: #666;\n\t\t\t\t\t--pitch1-secondary-channel: #6CD9ED;\n\t\t\t\t\t--pitch1-primary-channel:   #00A0BD;\n\t\t\t\t\t--pitch1-secondary-note:    #34C2DC;\n\t\t\t\t\t--pitch1-primary-note:      #00758A;\n\t\t\t\t\t--pitch2-secondary-channel: #E3C941;\n\t\t\t\t\t--pitch2-primary-channel:   #B49700;\n\t\t\t\t\t--pitch2-secondary-note:    #D1B628;\n\t\t\t\t\t--pitch2-primary-note:      #836E00;\n\t\t\t\t\t--pitch3-secondary-channel: #FF9D61;\n\t\t\t\t\t--pitch3-primary-channel:   #E14E00;\n\t\t\t\t\t--pitch3-secondary-note:    #F67D3C;\n\t\t\t\t\t--pitch3-primary-note:      #B64000;\n\t\t\t\t\t--pitch4-secondary-channel: #4BE24B;\n\t\t\t\t\t--pitch4-primary-channel:   #00A800;\n\t\t\t\t\t--pitch4-secondary-note:    #2DC82D;\n\t\t\t\t\t--pitch4-primary-note:      #008000;\n\t\t\t\t\t--pitch5-secondary-channel: #FF90FF;\n\t\t\t\t\t--pitch5-primary-channel:   #E12EDF;\n\t\t\t\t\t--pitch5-secondary-note:    #EC6EEC;\n\t\t\t\t\t--pitch5-primary-note:      #A600A5;\n\t\t\t\t\t--pitch6-secondary-channel: #B5B5FE;\n\t\t\t\t\t--pitch6-primary-channel:   #6969FD;\n\t\t\t\t\t--pitch6-secondary-note:    #9393FE;\n\t\t\t\t\t--pitch6-primary-note:      #4A4AD7;\n\t\t\t\t\t--noise1-secondary-channel: #C1C1C1;\n\t\t\t\t\t--noise1-primary-channel:   #898989;\n\t\t\t\t\t--noise1-secondary-note:    #ADADAD;\n\t\t\t\t\t--noise1-primary-note:      #6C6C6C;\n\t\t\t\t\t--noise2-secondary-channel: #E8BB8C;\n\t\t\t\t\t--noise2-primary-channel:   #BD7D3A;\n\t\t\t\t\t--noise2-secondary-note:    #D1A374;\n\t\t\t\t\t--noise2-primary-note:      #836342;\n\t\t\t\t\t--noise3-secondary-channel: #9BC4EB;\n\t\t\t\t\t--noise3-primary-channel:   #4481BE;\n\t\t\t\t\t--noise3-secondary-note:    #7CA7D3;\n\t\t\t\t\t--noise3-primary-note:      #476685;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t.beepboxEditor button, .beepboxEditor select {\n\t\t\t\t\tbox-shadow: inset 0 0 0 1px var(--secondary-text);\n\t\t\t\t}\n\t\t\t"
 }
 
