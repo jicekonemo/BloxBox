@@ -7264,10 +7264,14 @@ var beepbox=function(t){"use strict";
                 }]
             }, {
             name: "ghost house (AbyssBox)",
-            midiProgram: 121,
+            midiProgram: 12,
             settings: {
                 type: "FM",
-                eqFilter: [ {"type": "low-pass", "cutoffHz": 13454.34, "linearGain": 0.0884 } ],
+                eqFilter: [{
+					type: "low-pass",
+					cutoffHz: 13454.34,
+					linearGain: 0.0884
+				}],
                 effects: ["transition type", "vibrato", "bitcrusher"],
                 transition: "continue",
 				vibrato: "heavy",
