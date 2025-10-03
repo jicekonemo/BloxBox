@@ -7262,6 +7262,36 @@ var beepbox=function(t){"use strict";
                     target: "noteFilterAllFreqs",
                     envelope: "twang 2"
                 }]
+            }, {
+            name: "ghost house (AbyssBox)",
+            midiProgram: 121,
+            settings: {
+                type: "FM",
+                eqFilter: [ {"type": "low-pass", "cutoffHz": 13454.34, "linearGain": 0.0884 } ],
+                effects: ["transition type", "vibrato", "bitcrusher"],
+                transition: "continue",
+				vibrato: "heavy",
+				bitcrusherOctave: 3.5,
+				bitcrusherQuantization: 43,
+                fadeInSeconds: 0,
+                fadeOutTicks: -1,
+                algorithm: "1←(2 3←4)",
+				feedbackType: "1⟲",
+				feedbackAmplitude: 0,
+				operators: [{
+					frequency: "1×",
+					amplitude: 15
+				}, {
+					frequency: "1×",
+					amplitude: 3
+				}, {
+					frequency: "1×",
+					amplitude: 6,
+				}, {
+					frequency: "1×",
+					amplitude: 7
+				}],
+                envelopes: []
             }
         }])
     }]);
