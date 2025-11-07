@@ -756,7 +756,7 @@ var beepbox=function(t){"use strict";
         name: "B",
         isWhiteKey: !0,
         basePitch: 23
-    }]), e.blackKeyNameParents = [-1, 1, -1, 1, -1, 1, -1, -1, 1, -1, 1, -1], e.tempoMin = -999, e.tempoMax = 999, e.echoDelayRange = 24, e.echoDelayStepTicks = 4, e.echoSustainRange = 8, e.echoShelfHz = 4e3, e.echoShelfGain = Math.pow(2, -.5), e.reverbShelfHz = 8e3, e.reverbShelfGain = Math.pow(2, -1.5), e.reverbRange = 4, e.reverbDelayBufferSize = 16384, e.reverbDelayBufferMask = e.reverbDelayBufferSize - 1, e.beatsPerBarMin = 3, e.beatsPerBarMax = 16, e.barCountMin = 1, e.barCountMax = 128, e.instrumentCountMin = 1, e.layeredInstrumentCountMax = 4, e.patternInstrumentCountMax = 10, e.partsPerBeat = 24, e.ticksPerPart = 2, e.rhythms = a([{
+    }]), e.blackKeyNameParents = [-1, 1, -1, 1, -1, 1, -1, -1, 1, -1, 1, -1], e.tempoMin = 1, e.tempoMax = 1000, e.echoDelayRange = 24, e.echoDelayStepTicks = 4, e.echoSustainRange = 8, e.echoShelfHz = 4e3, e.echoShelfGain = Math.pow(2, -.5), e.reverbShelfHz = 8e3, e.reverbShelfGain = Math.pow(2, -1.5), e.reverbRange = 4, e.reverbDelayBufferSize = 16384, e.reverbDelayBufferMask = e.reverbDelayBufferSize - 1, e.beatsPerBarMin = 3, e.beatsPerBarMax = 16, e.barCountMin = 1, e.barCountMax = 128, e.instrumentCountMin = 1, e.layeredInstrumentCountMax = 4, e.patternInstrumentCountMax = 10, e.partsPerBeat = 24, e.ticksPerPart = 2, e.rhythms = a([{
         name: "÷3 (triplets)",
         stepsPerBeat: 3,
         ticksPerArpeggio: 4,
@@ -8745,8 +8745,8 @@ var beepbox=function(t){"use strict";
             return t >= this.pitchChannelCount
         }
         initToDefault(t = !0) {
-            if (this.scale = 0, this.key = 0, this.loopStart = 0, this.loopLength = 4, this.tempo = 100, this.beatsPerBar = 8, this.barCount = 16, this.patternsPerChannel = 8, this.rhythm = 1, this.layeredInstruments = !1, this.patternInstruments = !1, t) {
-                this.pitchChannelCount = 3, this.noiseChannelCount = 1;
+            if (this.scale = 0, this.key = 0, this.loopStart = 0, this.loopLength = 4, this.tempo = 100+Math.round(50*(Math.random())), this.beatsPerBar = 8, this.barCount = 16, this.patternsPerChannel = 8, this.rhythm = 1, this.layeredInstruments = !1, this.patternInstruments = !1, t) {
+                this.pitchChannelCount = 5, this.noiseChannelCount = 2;
                 for (let t = 0; t < this.getChannelCount(); t++) {
                     const i = t >= this.pitchChannelCount;
                     this.channels.length <= t && (this.channels[t] = new bt);
