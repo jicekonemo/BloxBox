@@ -8751,12 +8751,12 @@ var beepbox=function(t){"use strict";
                     const i = t >= this.pitchChannelCount;
                     this.channels.length <= t && (this.channels[t] = new bt);
                     const s = this.channels[t];
-                    s.octave = i ? 0 : 4 - t;
+                    s.octave = i ? 0 : 5 - t;
                     for (let t = 0; t < this.patternsPerChannel; t++) s.patterns.length <= t ? s.patterns[t] = new at : s.patterns[t].reset();
                     s.patterns.length = this.patternsPerChannel;
                     for (let t = 0; t < e.instrumentCountMin; t++) s.instruments.length <= t && (s.instruments[t] = new gt(i)), s.instruments[t].setTypeAndReset(i ? 2 : 0, i);
                     s.instruments.length = e.instrumentCountMin;
-                    for (let t = 0; t < this.barCount; t++) s.bars[t] = t < 4 ? 1 : 0;
+                    for (let t = 0; t < this.barCount; t++) s.bars[t] = t < 8 ? 1 : 0;
                     s.bars.length = this.barCount
                 }
                 this.channels.length = this.getChannelCount()
