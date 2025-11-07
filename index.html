@@ -8745,7 +8745,7 @@ var beepbox=function(t){"use strict";
             return t >= this.pitchChannelCount
         }
         initToDefault(t = !0) {
-            if (this.scale = Math.round(12*Math.random()), this.key = Math.round(11*Math.random()), this.loopStart = 0, this.loopLength = 8, this.tempo = 100+(10*(Math.round(10*(Math.random())))), this.beatsPerBar = 6+2*(Math.round(Math.random())), this.barCount = 32, this.patternsPerChannel = 32, this.rhythm = 1, this.layeredInstruments = !1, this.patternInstruments = !1, t) {
+            if (this.scale = 0, this.key = Math.round(11*Math.random()), this.loopStart = 0, this.loopLength = 8, this.tempo = 100+(10*(Math.round(10*(Math.random())))), this.beatsPerBar = 6+2*(Math.round(Math.random())), this.barCount = 32, this.patternsPerChannel = 32, this.rhythm = 1, this.layeredInstruments = !1, this.patternInstruments = !1, t) {
                 this.pitchChannelCount = 3+(Math.round(2*Math.random())), this.noiseChannelCount = 1+(Math.round(Math.random()));
                 for (let t = 0; t < this.getChannelCount(); t++) {
                     const i = t >= this.pitchChannelCount;
