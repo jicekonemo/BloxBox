@@ -4994,7 +4994,7 @@ function Bt() {
                 i=e.substring(s+1);
 
                 switch(t) {
-                    case"song": at.setSong(i), at.snapToStart(), ct.setAttribute("href", "index.htm#" +i);
+                    case"song": at.setSong(i), at.snapToStart(), ct.setAttribute("href", "index.html#" +i);
                     break;
                     case"loop": at.loopRepeatCount="1" !=i?0:-1, $t()
                 }
